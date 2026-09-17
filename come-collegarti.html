@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Come collegarti — Oneri Torino via IA</title>
+<meta name="description" content="Guida passo-passo per collegare il calcolatore oneri di urbanizzazione di Torino a Claude, ChatGPT o Mistral Le Chat.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%232456a6%27/%3E%3Ctext x=%2716%27 y=%2723%27 text-anchor=%27middle%27 font-family=%27Arial%27 font-size=%2719%27 font-weight=%27bold%27 fill=%27white%27%3E%E2%82%AC%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="brand">Oneri Torino via IA
+      <small>progetto indipendente &middot; non ufficiale &middot; gratuito</small>
+    </div>
+    <nav class="site-nav">
+      <a href="index.html">Home</a>
+      <a href="come-collegarti.html" class="active">Come collegarti</a>
+      <a href="esempi.html">Esempi pratici</a>
+      <a href="faq.html">FAQ</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="note-legali.html">Note legali</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <h1>Come collegarti</h1>
+  <p class="lead">
+    Scegli l'assistente AI che usi già. La procedura va fatta <strong>una sola volta</strong>:
+    da quel momento potrai semplicemente chiedere in chat il calcolo degli oneri.
+  </p>
+
+  <div class="tabs" role="tablist">
+    <button class="tab-btn active" role="tab" aria-selected="true" data-tab="tab-claude">Claude (consigliato)</button>
+    <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-chatgpt">ChatGPT</button>
+    <button class="tab-btn" role="tab" aria-selected="false" data-tab="tab-lechat">Mistral Le Chat</button>
+  </div>
+
+  <!-- CLAUDE -->
+  <div class="tab-panel active" id="tab-claude">
+    <p>
+      <span class="pill">Funziona anche con account gratuito</span>
+      <span class="pill">Pochi clic</span>
+      <span class="pill">Nessuna competenza tecnica richiesta</span>
+    </p>
+
+    <div class="card">
+      <ol class="steps">
+        <li>
+          Se non hai già un account Claude, creane uno gratuito su
+          <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a> (basta un'email,
+          circa 30 secondi). Se lo hai già, accedi.
+        </li>
+        <li>
+          Clicca il bottone qui sotto. Si aprirà Claude con la finestra "Aggiungi connettore
+          personalizzato" già compilata con nome e indirizzo del servizio.
+          <div class="btn-row">
+            <a class="btn" id="claude-connect-btn"
+               href="https://claude.ai/customize/connectors?modal=add-custom-connector&amp;connectorName=Calcolatore%20Oneri%20Urbanizzazione%20Torino&amp;connectorUrl=https%3A%2F%2Feptools-c7tz.onrender.com%2Fmcp"
+               target="_blank" rel="noopener">
+              Connetti a Claude &rarr;
+            </a>
+          </div>
+        </li>
+        <li>
+          Nella finestra vedrai un avviso del tipo <em>"connettore suggerito da un link
+          esterno: verifica nome e URL"</em>: è normale, Claude lo mostra per qualsiasi link di
+          questo tipo. Controlla che nome e indirizzo siano quelli indicati qui sotto e clicca
+          <strong>"Continua"</strong>. Non viene richiesto nessun accesso al servizio: è un
+          connettore pubblico e gratuito.
+        </li>
+        <li>
+          Fatto! Torna alla conversazione con Claude e prova una delle
+          <a href="esempi.html">richieste di esempio</a>. Se Claude non usa subito lo strumento,
+          verifica che il connettore sia attivo dal menu "+" della chat &rarr; Connettori.
+        </li>
+      </ol>
+    </div>
+
+    <h3>Il bottone non funziona o preferisci inserirlo a mano?</h3>
+    <p>Vai su Claude &rarr; Impostazioni &rarr; Connettori &rarr; Aggiungi connettore personalizzato, e inserisci:</p>
+    <div class="code-box">
+      <span><strong>Nome:</strong> Calcolatore Oneri Urbanizzazione Torino</span>
+    </div>
+    <div class="code-box">
+      <span id="mcp-url-claude"><strong>URL:</strong> https://eptools-c7tz.onrender.com/mcp</span>
+      <button class="copy-btn" onclick="copyText(this, 'https://eptools-c7tz.onrender.com/mcp')">Copia URL</button>
+    </div>
+    <p class="lead">
+      Nota: con il piano Claude Free puoi collegare fino a 1 connettore personalizzato — è più
+      che sufficiente per questo servizio.
+    </p>
+  </div>
+
+  <!-- CHATGPT -->
+  <div class="tab-panel" id="tab-chatgpt">
+    <p>
+      <span class="pill">Richiede piano Plus, Pro, Business o Enterprise/Edu</span>
+      <span class="pill">Il piano Free NON è supportato</span>
+      <span class="pill">5-6 passaggi</span>
+    </p>
+
+    <div class="banner warn">
+      <strong>Nota</strong>
+      ChatGPT richiede di attivare la "Developer mode" (modalità sviluppatore) per poter
+      collegare un connettore personalizzato come questo. È una funzione ufficiale di OpenAI,
+      non qualcosa di rischioso, ma comparirà un avviso di attenzione: è normale, riguarda
+      qualsiasi connettore esterno, non solo questo.
+    </div>
+
+    <div class="card">
+      <ol class="steps">
+        <li>Apri ChatGPT sul web e accedi con un account Plus, Pro, Business, Enterprise o Edu.</li>
+        <li>Vai su <strong>Impostazioni &rarr; App e connettori</strong> (in inglese "Settings &rarr; Apps &amp; Connectors").</li>
+        <li>Nelle impostazioni avanzate, attiva <strong>"Developer mode"</strong> (modalità sviluppatore).</li>
+        <li>Clicca <strong>"Aggiungi connettore" / "Add connector"</strong>, scegli l'opzione per un connettore personalizzato (custom/remote MCP) e incolla i dati qui sotto.</li>
+        <li>Conferma la creazione del connettore.</li>
+        <li>
+          Nella conversazione, apri il menu degli strumenti/connettori e assicurati che il
+          connettore sia attivato per quella chat, poi prova una
+          <a href="esempi.html">richiesta di esempio</a>.
+        </li>
+      </ol>
+    </div>
+
+    <div class="code-box">
+      <span><strong>Nome:</strong> Calcolatore Oneri Urbanizzazione Torino</span>
+    </div>
+    <div class="code-box">
+      <span><strong>URL:</strong> https://eptools-c7tz.onrender.com/mcp</span>
+      <button class="copy-btn" onclick="copyText(this, 'https://eptools-c7tz.onrender.com/mcp')">Copia URL</button>
+    </div>
+  </div>
+
+  <!-- LE CHAT -->
+  <div class="tab-panel" id="tab-lechat">
+    <p>
+      <span class="pill">Funziona anche con account gratuito</span>
+      <span class="pill">3-4 passaggi</span>
+    </p>
+
+    <div class="card">
+      <ol class="steps">
+        <li>
+          Apri <a href="https://chat.mistral.ai" target="_blank" rel="noopener">Le Chat</a>
+          (Mistral AI) e accedi, oppure crea un account gratuito.
+        </li>
+        <li>Vai su <strong>Impostazioni &rarr; Connettori</strong> e scegli di aggiungere un connettore personalizzato.</li>
+        <li>Incolla i dati qui sotto e conferma. Se compare una richiesta di accesso/autorizzazione, segui semplicemente la procedura guidata a schermo.</li>
+        <li>
+          Fatto! Torna alla conversazione e prova una
+          <a href="esempi.html">richiesta di esempio</a>.
+        </li>
+      </ol>
+    </div>
+
+    <div class="code-box">
+      <span><strong>Nome:</strong> Calcolatore Oneri Urbanizzazione Torino</span>
+    </div>
+    <div class="code-box">
+      <span><strong>URL:</strong> https://eptools-c7tz.onrender.com/mcp</span>
+      <button class="copy-btn" onclick="copyText(this, 'https://eptools-c7tz.onrender.com/mcp')">Copia URL</button>
+    </div>
+  </div>
+
+  <div class="tip" style="margin-top:32px;">
+    <strong>Se il connettore risulta "disconnesso":</strong> può capitare di tanto in tanto
+    (soprattutto sui piani a pagamento degli assistenti). Basta riconnetterlo dalle impostazioni
+    dei connettori: non serve rifare la procedura da capo.
+  </div>
+
+  <div class="banner warn">
+    <strong>Ricorda</strong>
+    Questo è un servizio indipendente e non ufficiale: i valori calcolati sono indicativi.
+    Verifica sempre gli importi definitivi con l'Ufficio Tecnico comunale competente.
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="disclaimer">
+      Progetto personale, sperimentale e gratuito, senza alcun legame con il Comune di Torino
+      o altra Pubblica Amministrazione. Nessun valore ufficiale.
+      Leggi le <a href="note-legali.html">note legali complete</a>.
+    </div>
+    <p>&copy; 2026 — Progetto indipendente. Contatto: <a href="mailto:ing.palombo@gmail.com">ing.palombo@gmail.com</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
